@@ -1,0 +1,32 @@
+.list{
+  min-height: 10vh;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  display: flex;
+  margin: 4%;
+  font-size: 1.5em;
+}
+
+li {
+	list-style: none;
+	padding-bottom: .6em;
+}
+
+.round-button {
+    width:50px;
+    height:50px;;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:1em;
+    font-weight:bold;
+    margin-left: 1.2em;
+}
+.round-button:hover {
+    background: #262626;
+}

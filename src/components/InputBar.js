@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import "./css/InputBar.css";
 
 const InputBar = props => {
 	
@@ -18,9 +19,9 @@ const InputBar = props => {
  	};
 
 	return (
-		<form onSubmit={onFormSubmit} className="search-form">
-	        <input className="search-bar" value={term} onChange={onChangeTerm}/>
-	        <a onClick={onFormSubmit} className="search-button">Add</a>
+		<form onSubmit={onFormSubmit} className="input-form">
+	        <input className="input-bar" value={term} onChange={onChangeTerm}/>
+	        <a onClick={onFormSubmit} className="brk-btn">Add</a>
     	</form>
 	);
 }

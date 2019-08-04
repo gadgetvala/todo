@@ -1,0 +1,8 @@
+body {
+	margin : 0;
+}
+
+.App {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+}

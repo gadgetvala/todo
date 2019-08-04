@@ -1,6 +1,7 @@
 import React from 'react';
 import InputBar from "./InputBar";
 import RenderList from "./RenderList";
+import "./css/App.css"
 
 class App extends React.Component {
 
@@ -35,7 +36,7 @@ class App extends React.Component {
     //Function : Render Method
     render() {
         return ( 
-            <div>
+            <div className="App">
                 <InputBar setList={ this.setList.bind(this) }/> 
                 <RenderList 
                     lists={ this.state.list }

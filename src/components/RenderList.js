@@ -1,5 +1,6 @@
 import React from "react";
-	
+import "./css/RenderList.css";
+
 const RenderList = props => {
 
 	const passDeleteID = (id) => {
@@ -7,17 +8,18 @@ const RenderList = props => {
 	}
 
 	return (
-		<div>
+		<div className="list">
 			<ul>
 				{props.lists.map( item => {
 					return(
 						<li key={item.id}>
-							{item.value}
-							<button 
-								onClick={() => passDeleteID(item.id)}
-							>
-								X
-							</button>
+								<input type="checkbox" id="fruit1" name="fruit-1" value="Apple"/>
+								<label>{item.value}</label>															
+								<a className="round-button"
+									onClick={() => passDeleteID(item.id)}
+								>
+									X
+								</a>
 						</li>
 					)
 				})}
