@@ -4,7 +4,9 @@
   align-items: center;
   width: 80%;
   display: flex;
-  margin: 4%;
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
   font-size: 1.5em;
 }
 
@@ -14,19 +16,35 @@ li {
 }
 
 .round-button {
-    width:50px;
-    height:50px;;
-    border: 2px solid #f5f5f5;
+    width:100px;
+    height:100px;;
+    border: 1.5px solid #91999f;
     border-radius: 50%;
-    color:#f5f5f5;
+    color:#ff2828;
     text-align:center;
     text-decoration:none;
-    background: #464646;
-    box-shadow: 0 0 3px gray;
+    background: #4f5f6ce8;
+    box-shadow: 0 0 3px #403434;
     font-size:1em;
-    font-weight:bold;
-    margin-left: 1.2em;
+    margin-left: 1em;
 }
 .round-button:hover {
     background: #262626;
+}
+
+.addStrike {
+  text-decoration: line-through;
+}
+
+.labelFormat {
+  font-size: 1.2em;
+  margin-left: 1em;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  word-spacing: 0.2px;
+  color: #000000;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
 }
