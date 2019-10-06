@@ -1,51 +1,69 @@
 import React,{useState} from "react";
 import "./css/RenderList.css";
 
-const RenderList = props => {
+class RenderList extends React.Component {
 
-	const [ isChecked ,setisChecked ] = useState(false);
-	const [ addStrike ,setaddStrike ] = useState("");
+	/**edited 
+	 * converted functional component to class based component
+	 * fixed bug of getting sticks on all elements
+	 * created a checkbox class which stricks its text
+	 * checkbox class toggle on checkboxchange
+	*/
 
-	//Function : For adding and remove Strike
-	const checkStrike = () => {
-		if(isChecked === false) {
-			setaddStrike("addStrike");
-			setisChecked(true);
-		}else {
-			setaddStrike("");
-			setisChecked(false);
+	constructor(props) {
+		super(props);
+	}
+	/*added */
+	onCheck = (e) => {
+		if(e.target.className === '') {
+			e.target.className = 'checkbox';
+		} else {
+			e.target.className = '';
 		}
 	}
 
+	state = {isChecked: false};
+
+	//const [ isChecked ,setisChecked ] = useState(false);
+	//const [ addStrike ,setaddStrike ] = useState("");
+
+	//Function : For adding and remove Strike
+	//const checkStrike = () => {
+
 	//Function : Passing the list id for removing the item
-	const passDeleteID = (id) => {
-		props.deleteItem(id)
+	passDeleteID = (id) => {
+		this.props.deleteItem(id)
 	}
 
-	return (
-		<div className="list">
-			<ul>
-				{props.lists.map( item => {
-					return(
-						<li key={item.id}>
-							<input 
-								defaultChecked={isChecked} 
-								onChange={checkStrike} 
-								type="checkbox" 
-								value="Apple"
-							/>
-							<label className={`labelFormat ${addStrike}`}>{item.value}</label>															
-							<a className="round-button"
-								onClick={() => passDeleteID(item.id)}
-							>
-								X
-							</a>
-						</li>
-					)
-				})}
-			</ul>
-		</div>
-	);
+	
+	render() {
+
+		return (
+			<div className="list">
+				<ul>
+					{this.props.lists.map( item => {
+						return(
+							<li key={item.id}>
+								<input 
+									defaultChecked={this.state.isChecked} 
+									onChange={this.onCheck} 
+									type="checkbox" 
+									value="Apple"
+									className={''}
+								/>
+								<label className={"labelFormat"}>{item.value}</label>															
+								<a className="round-button"
+									onClick={() => this.passDeleteID(item.id)}
+								>
+									X
+								</a>
+							</li>
+						)
+					})}
+				</ul>
+			</div>
+		);
+	}
 
 };
 

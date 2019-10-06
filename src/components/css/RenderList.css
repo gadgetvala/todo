@@ -48,3 +48,9 @@ li {
   font-variant: normal;
   text-transform: none;
 }
+
+/*edited*/
+
+.checkbox + label {
+  text-decoration: line-through;
+}
